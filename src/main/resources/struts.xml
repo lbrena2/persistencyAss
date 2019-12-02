@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation"
+		value="false" />
+
+	<!-- <constant name="struts.devMode" value="true" /> -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<constant name="struts.custom.i18n.resources"
+		value="ApplicationResources" />
+
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="login" class="actions.LoginAction">
+			<result name="success">/WEB-INF/pages/UserMain.jsp</result>
+			<result name="error">/WEB-INF/pages/LoginFailed.jsp</result>
+		</action>
+
+
+		<action name="register" class="actions.RegisterAction">
+			<result name="success">/WEB-INF/pages/Login.jsp</result>
+			<result name="error">/WEB-INF/pages/Register.jsp</result>
+		</action>
+		
+		<action name="addBestFriend" class="actions.AddBestFriendAction">
+			<result name="success">/WEB-INF/pages/UserMain.jsp</result>
+			<result name="error">/WEB-INF/pages/UserMain.jsp</result>
+		</action>
+		
+		<action name="searchBy" class="actions.SearchByAction">
+			<result name="success">/WEB-INF/pages/FoundUser.jsp</result>
+			<result name="error">/WEB-INF/pages/FoundUser.jsp</result>
+		</action>
+
+		<action name="registrationpage">
+			<result>/WEB-INF/pages/Register.jsp</result>
+			<result name="error">/WEB-INF/pages/Login.jsp</result>
+		</action>
+
+		<action name="deleteuser" class="actions.DeleteUserAction">
+			<result name="success">/WEB-INF/pages/Login.jsp</result>
+			<result name="error">/WEB-INF/pages/Login.jsp</result>
+		</action>
+
+		<action name="loginpage">
+			<result>/WEB-INF/pages/Login.jsp</result>
+		</action>
+
+
+	</package>
+
+</struts>
